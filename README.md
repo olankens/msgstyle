@@ -2,7 +2,7 @@
 
 <p><img src="GITHUB.png" height="100%"></p>
 
-A Git commit message style enforcer that validates your commit messages against a set of opinionated rules. This tool ensures consistency and clarity in your commit history by checking message length, format, and content.
+Git commit message style enforcer that validates your commit messages against a set of opinionated rules. This tool ensures consistency and clarity in your commit history by checking message length, format, and content.
 
 ---
 
@@ -32,7 +32,46 @@ Commit messages must not contain special characters like `@`, `#`, `$`, `%`, `^`
 
 ### Start with Allowed Verb
 
-Commit messages must start with one of the allowed verbs: Accept, Adjust, Bundle, Bypass, Cancel, Concat, Create, Decode, Delete, Deploy, Enable, Encode, Ensure, Export, Filter, Forbid, Format, Freeze, Harden, Ignore, Import, Insert, Loosen, Permit, Rebase, Refine, Reject, Resume, Return, Revert, Reword, Secure, Submit, Switch, Unpack, Update, Vanish, or Verify. This enforces an imperative mood and consistent vocabulary.
+Commit messages must start with one of the allowed verbs:
+
+- Accept
+- Adjust
+- Bundle
+- Bypass
+- Cancel
+- Concat
+- Create
+- Decode
+- Delete
+- Deploy
+- Enable
+- Encode
+- Ensure
+- Export
+- Filter
+- Forbid
+- Format
+- Freeze
+- Harden
+- Ignore
+- Import
+- Insert
+- Loosen
+- Permit
+- Rebase
+- Refine
+- Reject
+- Resume
+- Return
+- Revert
+- Reword
+- Secure
+- Submit
+- Switch
+- Unpack
+- Update
+- Vanish
+- Verify
 
 ---
 
