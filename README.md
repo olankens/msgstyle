@@ -42,6 +42,6 @@ Commit messages must start with one of the allowed verbs: Accept, Adjust, Bundle
 
 ```shell
 git config --global core.hooksPath "$HOME/.githooks"
-curl "https://raw.githubusercontent.com/olankens/devsetup/HEAD/src/devsetup.sh" -o "$HOME/.githooks/commit-msg"
+curl "https://raw.githubusercontent.com/olankens/msgstyle/HEAD/src/msgstyle.sh" -o "$HOME/.githooks/commit-msg"
 chmod +x "$HOME/.githooks/commit-msg"
 ```

@@ -45,7 +45,46 @@ assert_no_weird_characters() {
 assert_start_with_allowed_verb() {
 
     local payload=$(head -n 1 "$1" | awk '{print $1}' | sed 's/[:,]$//')
-    local allowed=("Accept" "Adjust" "Bundle" "Bypass" "Cancel" "Concat" "Create" "Decode" "Delete" "Deploy" "Enable" "Encode" "Ensure" "Export" "Filter" "Forbid" "Format" "Freeze" "Harden" "Ignore" "Import" "Insert" "Loosen" "Permit" "Rebase" "Refine" "Reject" "Resume" "Return" "Revert" "Reword" "Secure" "Submit" "Switch" "Unpack" "Update" "Vanish" "Verify")
+    local allowed=(
+        "Accept"
+        "Adjust"
+        "Bundle"
+        "Bypass"
+        "Cancel"
+        "Concat"
+        "Create"
+        "Decode"
+        "Delete"
+        "Deploy"
+        "Enable"
+        "Encode"
+        "Ensure"
+        "Export"
+        "Filter"
+        "Forbid"
+        "Format"
+        "Freeze"
+        "Harden"
+        "Ignore"
+        "Import"
+        "Insert"
+        "Loosen"
+        "Permit"
+        "Rebase"
+        "Refine"
+        "Reject"
+        "Resume"
+        "Return"
+        "Revert"
+        "Reword"
+        "Secure"
+        "Submit"
+        "Switch"
+        "Unpack"
+        "Update"
+        "Vanish"
+        "Verify"
+    )
     for element in "${allowed[@]}"; do [[ "$payload" == "$element" ]] && return 0; done
     echo "❌ Commit message must start with an allowed verb: ${allowed[*]}"
     echo "Your message starts with: '$payload'" && exit 1
