@@ -1,6 +1,6 @@
 <hr>
 
-# <samp>MSGSTYLE</samp>
+# OVERVIEW
 
 ![](GITHUB.png)
 
@@ -20,12 +20,23 @@ Git commit message style enforcer that validates your commit messages against a 
 
 <hr>
 
+# GUIDANCE
+
 ### Global Installation
 
 ```shell
 git config --global core.hooksPath "$HOME/.githooks"
 curl "https://raw.githubusercontent.com/olankens/msgstyle/HEAD/src/msgstyle.sh" -o "$HOME/.githooks/commit-msg"
 chmod +x "$HOME/.githooks/commit-msg"
+```
+
+<hr>
+
+### Local Installation
+
+```shell
+curl "https://raw.githubusercontent.com/olankens/msgstyle/HEAD/src/msgstyle.sh" -o ".git/hooks/commit-msg"
+chmod +x ".git/hooks/commit-msg"
 ```
 
 <hr>

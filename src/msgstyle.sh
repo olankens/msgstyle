@@ -61,9 +61,9 @@ assert_start_with_allowed_verb() {
         "Encode" "End" "Ensure" "Expand" "Export" "Filter" "Flip" "Forbid" "Format" "Freeze"
         "Give" "Harden" "Hide" "Hone" "Ignore" "Import" "Insert" "Join" "Kill" "Let"
         "Load" "Lock" "Loosen" "Make" "Move" "Open" "Pack" "Permit" "Put" "Read"
-        "Rebase" "Refine" "Reject" "Resume" "Return" "Revert" "Reword" "Secure" "Send" "Set"
-        "Ship" "Skip" "Start" "Stop" "Style" "Submit" "Swap" "Switch" "Take" "Test"
-        "Undo" "Unpack" "Update" "Vanish" "Verify"
+        "Rebase" "Refine" "Reject" "Rename" "Resume" "Return" "Revert" "Reword" "Secure" "Send"
+        "Set" "Ship" "Skip" "Start" "Stop" "Style" "Submit" "Swap" "Switch" "Take"
+        "Test" "Undo" "Unpack" "Update" "Vanish" "Verify"
     )
     for element in "${allowed[@]}"; do [[ "$payload" == "$element" ]] && return 0; done
     echo "❌ Commit message must start with an allowed verb: ${allowed[*]}"
