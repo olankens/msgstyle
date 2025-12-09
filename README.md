@@ -8,7 +8,7 @@ Git commit message style enforcer that validates your commit messages against a 
 
 <hr>
 
-### Styling Rules
+### Formatting Rules
 
 - Lenght between 10 and 35
 - No digits
