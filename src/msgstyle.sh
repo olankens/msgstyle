@@ -3,11 +3,21 @@
 # shellcheck shell=bash
 # shellcheck disable=SC2034,SC2155
 
-assert_lenght_between_12_and_72() {
+assert_lenght_between_10_and_35() {
 
     local payload=$(head -n 1 "$1")
-    if [[ ${#payload} -ge 12 && ${#payload} -le 72 ]]; then return 0; fi
-    echo "❌ Commit message must be between 12 and 72 characters long"
+    if [[ ${#payload} -ge 10 && ${#payload} -le 35 ]]; then return 0; fi
+    echo "❌ Commit message must be between 10 and 35 characters long"
+    echo "Your message is: '$payload'" && exit 1
+
+}
+
+assert_no_digits() {
+
+    local payload=$(head -n 1 "$1")
+    local pattern='[0-9]'
+    if [[ ! "$payload" =~ $pattern ]]; then return 0; fi
+    echo "❌ Commit message must not contain digits"
     echo "Your message is: '$payload'" && exit 1
 
 }
@@ -91,13 +101,25 @@ assert_start_with_allowed_verb() {
 
 }
 
+assert_start_with_capital_rest_lowercase() {
+
+    local payload=$(head -n 1 "$1")
+    local pattern='^[A-Z][a-z0-9 -]*$'
+    if [[ "$payload" =~ $pattern ]]; then return 0; fi
+    echo "❌ Commit message must start with a capital letter and the rest must be lowercase"
+    echo "Your message is: '$payload'" && exit 1
+
+}
+
 main() {
 
-    assert_lenght_between_12_and_72 "$1"
+    assert_lenght_between_10_and_35 "$1"
+    assert_no_digits "$1"
     assert_no_scope_or_type "$1"
     assert_no_trailing_punctuation "$1"
     assert_no_weird_characters "$1"
     assert_start_with_allowed_verb "$1"
+    assert_start_with_capital_rest_lowercase "$1"
 
 }
 
